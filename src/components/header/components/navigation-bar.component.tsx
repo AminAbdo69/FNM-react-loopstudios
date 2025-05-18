@@ -1,6 +1,6 @@
 import { useState, useMemo } from "react";
-import menu_icon from "../../../assets/icons/menu.svg";
-import close_icon from "../../../assets/icons/close.svg";
+import menu_icon from "../../../assets/icons/icon-hamburger.svg";
+import close_icon from "../../../assets/icons/icon-close.svg";
 
 type NavItem = {
   name: string;
@@ -48,7 +48,7 @@ const MobileMenu = ({
       aria-modal="true"
       aria-label="Mobile navigation menu"
     >
-      <div className="flex flex-col items-start gap-6 mt-[50vh] translate-y-[-50%] ml-[24px]">
+      <div className="flex flex-col items-start gap-6 mt-[20vh] ml-6">
         {items.map((item) => (
           <a
             key={item.name}
@@ -73,39 +73,51 @@ export const NavigationBar = () => {
 
   return (
     <nav
-      className="flex flex-col items-center gap-6 lg:flex-row"
+      className="flex items-center justify-end w-full"
       role="navigation"
       aria-label="Main navigation"
     >
+      <div className="flex items-center gap-8">
+        <div className="hidden lg:flex items-center gap-8">
+          {memoizedNavItems.map((item) => (
+            <a
+              key={item.name}
+              href={item.href}
+              className="text-white custom-underline"
+            >
+              {item.name}
+            </a>
+          ))}
+        </div>
+
+        {isOpen ? (
+          <button
+            className="lg:hidden cursor-pointer z-20"
+            onClick={closeMenu}
+            aria-expanded={isOpen}
+            aria-controls="mobile-menu"
+            aria-label="Close menu"
+          >
+            <img src={close_icon} alt="close" className="lg:hidden" />
+          </button>
+        ) : (
+          <button
+            className="lg:hidden cursor-pointer z-20"
+            onClick={toggleMenu}
+            aria-expanded={isOpen}
+            aria-controls="mobile-menu"
+            aria-label="Open menu"
+          >
+            <img src={menu_icon} alt="open" className="lg:hidden" />
+          </button>
+        )}
+      </div>
+
       <MobileMenu
         isOpen={isOpen}
         onClose={closeMenu}
         items={memoizedNavItems}
       />
-
-      <button
-        className="lg:hidden cursor-pointer z-20"
-        onClick={toggleMenu}
-        aria-expanded={isOpen}
-        aria-controls="mobile-menu"
-        aria-label={isOpen ? "Close menu" : "Open menu"}
-      >
-        <img
-          src={isOpen ? close_icon : menu_icon}
-          alt={isOpen ? "close" : "open"}
-          className="lg:hidden"
-        />
-      </button>
-
-      {memoizedNavItems.map((item) => (
-        <a
-          key={item.name}
-          href={item.href}
-          className="hidden lg:block text-white custom-underline"
-        >
-          {item.name}
-        </a>
-      ))}
     </nav>
   );
 };
