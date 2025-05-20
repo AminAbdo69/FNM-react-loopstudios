@@ -64,26 +64,26 @@ export const Creation = () => {
   const memoizedCreations = useMemo(() => creations, []);
 
   return (
-    <section aria-labelledby="creations-heading max-w-[1440px] mx-auto px-6 pb-20">
-      <div className="flex justify-center items-center mb-10 ">
+    <section aria-labelledby="creations-heading max-w-[1440px] mx-auto px-6 pb-20 lg:px-36 lg:pb-40">
+      <div className="flex justify-center items-center mb-10 lg:justify-between lg:mb-22">
         <h2
           id="creations-heading"
-          className="text-center text-3xl uppercase  font-light"
+          className="text-center text-3xl uppercase font-light lg:text-left lg:text-4xl"
         >
           Our creations
         </h2>
-        <button className="text-center px-10 py-3 hidden lg:block cursor-pointer tracking-[5px] text-lg font-light border-1  hover:bg-black hover:text-white">
+        <button className="text-center px-10 py-3 hidden cursor-pointer tracking-[5px] text-lg font-light border-1  hover:bg-black hover:text-white lg:block">
           See all
         </button>
       </div>
 
-      <div className="grid grid-cols-1 gap-4">
+      <div className="grid grid-cols-1 gap-4 lg:grid-cols-4">
         {memoizedCreations.map((creation) => (
           <div className="relative">
             <img
               src={creation.image}
               alt={creation.title}
-              className="hidden lg:block w-full object-cover"
+              className="hidden  w-full object-cover lg:block"
             />
             <img
               src={creation.image_mobile}
@@ -91,12 +91,12 @@ export const Creation = () => {
               className="w-full aspect-10/4 object-cover object-[0%_5%] lg:hidden"
             />
             <div className="inset-0 bg-black/50 absolute cursor-pointer hover:bg-white/70 transition-all duration-300 text-white hover:text-black">
-              <h3 className="absolute bottom-0 left-0  uppercase text-2xl lg:text-4xl font-light pl-6 py-6 lg:pl-10 lg:py-10 w-1/2 lg:w-4/5 ">
+              <h3 className="absolute bottom-0 left-0  uppercase text-2xl w-1/2 font-light pl-6 py-6 lg:pl-10 lg:py-10 lg:w-4/5 lg:text-4xl">
                 {creation.title}
               </h3>
             </div>
             <div className="flex justify-center items-center mt-10 lg:hidden">
-              <button className="lg:hidden  uppercase text-lg border-1 px-10 py-3 tracking-[5px] cursor-pointer hover:bg-black hover:text-white">
+              <button className="  uppercase text-lg border-1 px-10 py-3 tracking-[5px] cursor-pointer hover:bg-black hover:text-white lg:hidden">
                 SEE ALL
               </button>
             </div>
