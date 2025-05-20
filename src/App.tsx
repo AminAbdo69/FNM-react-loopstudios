@@ -1,4 +1,5 @@
 import "./App.css";
+import { Creation } from "./components/creation";
 import { Intro } from "./components/intro";
 import { Landing } from "./components/landing";
 
@@ -7,6 +8,7 @@ function App() {
     <>
       <Landing />
       <Intro />
+      <Creation />
     </>
   );
 }
