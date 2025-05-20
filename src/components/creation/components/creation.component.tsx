@@ -64,7 +64,10 @@ export const Creation = () => {
   const memoizedCreations = useMemo(() => creations, []);
 
   return (
-    <section aria-labelledby="creations-heading max-w-[1440px] mx-auto px-6 pb-20 lg:px-36 lg:pb-40">
+    <section
+      aria-labelledby="creations-heading"
+      className="max-w-[1440px] mx-auto px-6 pb-20 lg:px-36 lg:pb-40"
+    >
       <div className="flex justify-center items-center mb-10 lg:justify-between lg:mb-22">
         <h2
           id="creations-heading"
@@ -72,7 +75,7 @@ export const Creation = () => {
         >
           Our creations
         </h2>
-        <button className="text-center px-10 py-3 hidden cursor-pointer tracking-[5px] text-lg font-light border-1  hover:bg-black hover:text-white lg:block">
+        <button className="text-center px-10 py-3 hidden cursor-pointer tracking-[5px] transition-all duration-300 text-lg font-light border-1  hover:bg-black hover:text-white lg:block">
           See all
         </button>
       </div>
@@ -95,13 +98,13 @@ export const Creation = () => {
                 {creation.title}
               </h3>
             </div>
-            <div className="flex justify-center items-center mt-10 lg:hidden">
-              <button className="  uppercase text-lg border-1 px-10 py-3 tracking-[5px] cursor-pointer hover:bg-black hover:text-white lg:hidden">
-                SEE ALL
-              </button>
-            </div>
           </div>
         ))}
+        <div className="flex justify-center items-center mt-10 lg:hidden">
+          <button className=" uppercase text-lg border-1 px-10 py-3 tracking-[5px] cursor-pointer transition-all duration-300 hover:bg-black hover:text-white lg:hidden ">
+            SEE ALL
+          </button>
+        </div>
       </div>
     </section>
   );
