@@ -3,7 +3,7 @@ import facebook from "../../../assets/icons/icon-facebook.svg";
 import instagram from "../../../assets/icons/icon-instagram.svg";
 import twitter from "../../../assets/icons/icon-twitter.svg";
 import pinterest from "../../../assets/icons/icon-pinterest.svg";
-import { navItems } from "../../header/components/navigation-bar.component";
+import { NavItems } from "../../types";
 
 export const Footer = () => {
   return (
@@ -12,7 +12,7 @@ export const Footer = () => {
         <div className="flex flex-col items-center gap-10 lg:items-start ">
           <img src={logo} alt="logo" className="h-6" />
           <nav className="flex flex-col items-center gap-6 lg:flex-row">
-            {navItems.map((item) => (
+            {NavItems.map((item) => (
               <a href={item.href} className="text-white custom-underline">
                 {item.name}
               </a>

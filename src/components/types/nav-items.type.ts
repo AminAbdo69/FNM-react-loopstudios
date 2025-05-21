@@ -1,9 +1,9 @@
-type NavItem = {
+export type navItemType = {
   name: string;
   href: string;
 };
 
-export const navItems: NavItem[] = [
+export const NavItems: navItemType[] = [
   {
     name: "About",
     href: "#",
