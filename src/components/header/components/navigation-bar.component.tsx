@@ -1,34 +1,7 @@
 import { useState, useMemo } from "react";
 import menu_icon from "../../../assets/icons/icon-hamburger.svg";
 import close_icon from "../../../assets/icons/icon-close.svg";
-
-type NavItem = {
-  name: string;
-  href: string;
-};
-
-const navItems: NavItem[] = [
-  {
-    name: "About",
-    href: "#",
-  },
-  {
-    name: "Careers",
-    href: "#",
-  },
-  {
-    name: "Events",
-    href: "#",
-  },
-  {
-    name: "Products",
-    href: "#",
-  },
-  {
-    name: "Support",
-    href: "#",
-  },
-];
+import { NavItems, type navItemType } from "../../types";
 
 const MobileMenu = ({
   isOpen,
@@ -37,7 +10,7 @@ const MobileMenu = ({
 }: {
   isOpen: boolean;
   onClose: () => void;
-  items: NavItem[];
+  items: navItemType[];
 }) => {
   if (!isOpen) return null;
 
@@ -66,7 +39,7 @@ const MobileMenu = ({
 
 export const NavigationBar = () => {
   const [isOpen, setIsOpen] = useState(false);
-  const memoizedNavItems = useMemo(() => navItems, []);
+  const memoizedNavItems = useMemo(() => NavItems, []);
 
   const toggleMenu = () => setIsOpen(!isOpen);
   const closeMenu = () => setIsOpen(false);
