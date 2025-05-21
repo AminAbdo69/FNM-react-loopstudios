@@ -7,7 +7,7 @@ type NavItem = {
   href: string;
 };
 
-const navItems: NavItem[] = [
+export const navItems: NavItem[] = [
   {
     name: "About",
     href: "#",
