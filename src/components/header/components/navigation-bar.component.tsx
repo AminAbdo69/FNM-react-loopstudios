@@ -2,34 +2,6 @@ import { useState, useMemo } from "react";
 import menu_icon from "../../../assets/icons/icon-hamburger.svg";
 import close_icon from "../../../assets/icons/icon-close.svg";
 
-type NavItem = {
-  name: string;
-  href: string;
-};
-
-export const navItems: NavItem[] = [
-  {
-    name: "About",
-    href: "#",
-  },
-  {
-    name: "Careers",
-    href: "#",
-  },
-  {
-    name: "Events",
-    href: "#",
-  },
-  {
-    name: "Products",
-    href: "#",
-  },
-  {
-    name: "Support",
-    href: "#",
-  },
-];
-
 const MobileMenu = ({
   isOpen,
   onClose,
