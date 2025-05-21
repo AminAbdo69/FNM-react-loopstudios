@@ -18,26 +18,23 @@ export const Footer = () => {
               </a>
             ))}
           </nav>
-
-          <div className="flex flex-col items-center mt-10 gap-6 lg:items-end lg:mt-0 lg:justify-start lg:gap-10">
-            <nav className="flex gap-4">
-              <a href="#">
-                <img src={facebook} alt="facebook" />
-              </a>
-              <a href="#">
-                <img src={instagram} alt="instagram" />
-              </a>
-              <a href="#">
-                <img src={twitter} alt="twitter" />
-              </a>
-              <a href="#">
-                <img src={pinterest} alt="pinterest" />
-              </a>
-            </nav>
-            <p className="text-white">
-              © 2021 Loopstudios. All rights reserved.
-            </p>
-          </div>
+        </div>
+        <div className="flex flex-col items-center mt-10 gap-6 lg:items-end lg:mt-0 lg:justify-start lg:gap-10">
+          <nav className="flex gap-4">
+            <a href="#">
+              <img src={facebook} alt="facebook" />
+            </a>
+            <a href="#">
+              <img src={instagram} alt="instagram" />
+            </a>
+            <a href="#">
+              <img src={twitter} alt="twitter" />
+            </a>
+            <a href="#">
+              <img src={pinterest} alt="pinterest" />
+            </a>
+          </nav>
+          <p className="text-white">© 2021 Loopstudios. All rights reserved.</p>
         </div>
       </div>
     </footer>
