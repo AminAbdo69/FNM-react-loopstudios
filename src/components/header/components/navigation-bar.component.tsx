@@ -36,7 +36,7 @@ export const NavigationBar = () => {
       {NavItems.map((item) => (
         <a
           href={item.href}
-          className="hidden lg:block text-white custom-underline"
+          className="hidden cursor-pointer  text-white custom-underline lg:block"
         >
           {item.name}
         </a>
