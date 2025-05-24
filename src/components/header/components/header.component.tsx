@@ -3,8 +3,8 @@ import { NavigationBar } from "./navigation-bar.component";
 
 export const Header = () => {
   return (
-    <header className="max-w-[1440px] mx-auto relative">
-      <div className="absolute inset-0 px-6 lg:px-[170px] mx-auto mt-10">
+    <header className="w-full relative">
+      <div className="absolute inset-0 px-6 md:px-10 lg:px-[170px] mx-auto mt-6 md:mt-10">
         <div className="flex justify-between items-center w-full">
           <div className="flex-shrink-0">
             <img
