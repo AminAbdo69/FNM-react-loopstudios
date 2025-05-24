@@ -1,1 +1,22 @@
 @import "tailwindcss";
+
+.custom-underline {
+  @apply relative text-white no-underline cursor-pointer;
+}
+.custom-underline::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  transform: translateX(-50%);
+  width: 0;
+  height: 2px;
+  background: #fff;
+  opacity: 0.8;
+  transition: width 0.3s, height 0.3s, bottom 0.3s;
+}
+.custom-underline:hover::after {
+  width: 50%;
+  height: 4px;
+  bottom: -8px;
+}

@@ -37,14 +37,16 @@ export const Landing = () => {
   return (
     <section
       style={{ backgroundImage: `url(${backgroundImage})` }}
-      className="min-h-screen w-full bg-cover bg-center bg-no-repeat "
+      className="relative min-h-screen w-full bg-cover bg-center bg-no-repeat"
     >
       <Header />
-      <div className="container mx-auto my-auto px-30 pt-32 md:pt-40 md:px-5 md:m-0 max-md:m-0 max-md:px-5">
-        <div className="max-w-[650px] border-2 border-white p-6  md:p-10">
-          <h1 className="text-4xl md:text-7xl text-white uppercase font-light leading-tight">
-            Immersive experiences that deliver
-          </h1>
+      <div className="absolute inset-0 flex items-center">
+        <div className="w-full px-6 md:px-10 lg:px-[170px] mx-auto">
+          <div className="max-w-[650px] border-2 border-white p-3 md:p-5">
+            <h1 className="text-4xl md:text-7xl text-white uppercase font-light leading-tight">
+              Immersive experiences that deliver
+            </h1>
+          </div>
         </div>
       </div>
     </section>
